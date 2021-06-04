@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\MovieRequest;
 use Illuminate\Http\Request;
 use App\Models\Movie;
 
@@ -33,9 +34,10 @@ class MoviesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(MovieRequest $request)
     {
-        //
+        info($request);
+        return Movie::create($request->all());
     }
 
     /**

@@ -20,3 +20,5 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/movies',[MoviesController::class,'index']);
+
+Route::post('/movies',[MoviesController::class,'store']);
