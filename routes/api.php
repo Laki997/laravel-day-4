@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MoviesController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -19,6 +20,10 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-Route::get('/movies',[MoviesController::class,'index']);
+Route::middleware('jwt')->get('/movies',[MoviesController::class,'index']);
 
 Route::post('/movies',[MoviesController::class,'store']);
+
+Route::post('/login',[LoginController::class,'authenticate']);
+
+Route::post('/register',[LoginController::class,'register']);
