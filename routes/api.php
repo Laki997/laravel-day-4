@@ -27,3 +27,5 @@ Route::post('/movies',[MoviesController::class,'store']);
 Route::post('/login',[LoginController::class,'authenticate']);
 
 Route::post('/register',[LoginController::class,'register']);
+
+Route::get('/movie/{id}',[MoviesController::class,'show']);

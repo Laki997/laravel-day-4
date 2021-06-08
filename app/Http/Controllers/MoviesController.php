@@ -48,7 +48,7 @@ class MoviesController extends Controller
      */
     public function show($id)
     {
-        //
+        return Movie::find($id);
     }
 
     /**

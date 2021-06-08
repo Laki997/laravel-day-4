@@ -33,6 +33,6 @@ class RegisterRequest extends FormRequest
     public function messages()
     {
         return  [ 'name.required' => 'Morate uneti ime',
-        'email.required' => 'Morate uneti email','password' => 'Morate uneti password', 'email.unique' => 'User sa ovim emailom vec postoji'];
+        'email.required' => 'Morate uneti email','password.required' => 'Morate uneti password', 'email.unique' => 'User sa ovim emailom vec postoji'];
     }
 }
