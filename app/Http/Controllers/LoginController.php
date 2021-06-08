@@ -14,6 +14,8 @@ class LoginController extends Controller
     
     use AuthenticatesUsers;
 
+    // public $token = true;
+
 
     public function authenticate(Request $request){
     
@@ -41,6 +43,10 @@ class LoginController extends Controller
         $data = $request->all();
         $data['password'] = Hash::make($data['password']);
          User::create($data);
+
+        //  if ($this->token){
+        //      return $this->authenticate($request);
+        //  }
 
         //  auth()->authenticate($user);
 
