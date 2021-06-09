@@ -29,3 +29,5 @@ Route::post('/login',[LoginController::class,'authenticate']);
 Route::post('/register',[LoginController::class,'register']);
 
 Route::get('/movie/{id}',[MoviesController::class,'show']);
+
+Route::delete('/movie/{id}',[MoviesController::class,'destroy']);

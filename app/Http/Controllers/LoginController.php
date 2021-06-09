@@ -33,7 +33,12 @@ class LoginController extends Controller
             return response()->json(['error','something_wrong_with_creating_token'],500);
         }
 
-        return response()->json(compact('token'));
+        $user = User::where('email',$request->email)->get();
+
+
+        return response()->json(compact(['token','user']));
+
+
 
     }
 

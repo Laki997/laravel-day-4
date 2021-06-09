@@ -82,6 +82,6 @@ class MoviesController extends Controller
      */
     public function destroy($id)
     {
-        //
+         Movie::find($id)->delete();
     }
 }
